@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+<title>Covid</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	 <link rel="stylesheet" th:href="@{/css/design.css}" />
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+			<a href="/patientlist" class="btn btn-info">Patient List</a>
+			<a href="/logout" class="btn btn-danger">Logout</a>
+	</header>
+	<!-- EndHeader -->
+
+	<!-- Patient Information -->
+	<div class="patientInfo">
+		<p>Patient Information:</p>
+
+		<p th:text="${id}"></p>
+		<p th:text="${patient.id}"></p>
+	
+		<p th:text="${patient.firstName}"></p>
+	
+
+
+	</div>
+
+	<!--Vital Signs -->
+	<section>
+		<article>
+			<h2>Vital Signs</h2>
+			<ul th:each="vital: ${vitals}">
+				<li th:text="${vital.id}"></li>
+				<li th:text="${vital.firstName}"></li>
+				<li th:text="${vital.lastName}"></li>
+				<li th:text="${vital.temp}"></li>
+				<li th:text="${vital.respiratoryRate}"></li>
+				<li th:text="${vital.pulseRate}"></li>
+				<li th:text="${vital.systolic}"></li>
+				<li th:text="${vital.diastolic}"></li>
+			</ul>
+				</br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</article>
+	
+		<!--Vital Signs -->
+		<nav>
+			<a href="/editVs" class="btn btn-success">Edit Vital Signs</a>
+		</nav>
+	</section>
+
+	<!--Doctor's Orders -->
+	<section>
+		<article>
+			<h2>Doctor's Orders</h2>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</article>
+
+		<!--Doctor's Orders -->
+		<nav>
+			<a href="/addOrders" class="btn btn-success">Add Doctor's Orders</a>
+		</nav>
+	</section>
+
+	<!--Medications -->
+	<section>
+		<article>
+			<h2>List of Medications</h2>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</article>
+
+		<!--Medications -->
+		<nav>
+			<a href="/addMeds" class="btn btn-success">Add Medications</a>
+		</nav>
+	</section>
+
+	<!--Status of Patient -->
+	<section>
+		<article>
+			<h2>Status of Patient</h2>
+			</br> </br> </br> </br> </br> </br> </br> </br> </br>
+		</article>
+
+		<!--Discharge Form -->
+		<nav>
+			<a href="/dischargeForm" class="btn btn-success">Fill Discharge Form</a>
+		</nav>
+	</section>
+
+	<!-- Footer -->
+	<div class="demog">
+		<h2>Demographical Status of Patients</h2>
+	</div>
+
+	<!-- End Page -->
+</body>
+</html>
